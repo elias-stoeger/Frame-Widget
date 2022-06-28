@@ -4,13 +4,13 @@ from PIL import Image, ImageTk
 
 class varis:
 	# opens the picture (must be .png) whos name is written in the "Name" txt file
-    with open("Desktop/My stuff/FrameWidget/Name", "r") as file:
+    with open("Name", "r") as file:
         pics = file.read().strip("\n").split(", ")
         pic = pics[0]
 
-    w, h = Image.open(f"Desktop/My stuff/FrameWidget/Pictures/{pic}.png").size
-    w = int(w / 1.4)
-    h = int(h / 1.4)
+    w, h = Image.open(f"Pictures/{pic}.png").size
+    w = int(w / 1.2)
+    h = int(h / 1.2)
 
     root = Tk()
     root.title("Frame")
@@ -35,7 +35,7 @@ class NotMyCode(Frame):
     def __init__(self, master, *pargs):
         Frame.__init__(self, master, *pargs)
 
-        self.image = Image.open(f"Desktop/My stuff/FrameWidget/Pictures/{var.pic}.png")
+        self.image = Image.open(f"Pictures/{var.pic}.png")
         self.img_copy = self.image.copy()
 
         self.background_image = ImageTk.PhotoImage(self.image)
@@ -75,7 +75,7 @@ def button():
 
     B = Toplevel()
     B.geometry(f"10x10+{var.x - 10}+{var.hs-10}")
-    b1 = Button(B, text="", command=loop, bg="#324959", fg="#324959", relief="flat", highlightbackground="#324959")
+    b1 = Button(B, text="", command=loop, bg="#0a1517", fg="#0a1517", relief="flat", highlightbackground="#0a1517")
     b1.pack()
     B.attributes("-topmost", True)
     B.overrideredirect(True)
